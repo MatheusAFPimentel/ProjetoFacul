@@ -9,17 +9,18 @@
     <title>Denuncias</title>
 </head>
 
-<body>
-    <h1 style="color:red;">Lista de Denuncias</h1>
+<body style="background-color: #0a3d62">
+    <h1 style="color: #f5f6fa; position: absolute; margin-left: 40%; margin-top: 10%;">Lista de Denuncias</h1>
     <ul>
         {% for denuncia in denuncias %}
-        <a href="{% url 'update_crime' crime.id %}">
-            <li> {{ denuncia.denuncia }}</li>
+        <a href="{% url 'update_denuncia' denuncia.id %}">
+            <li> {{ denuncia.denuncias }}</li>
         </a>
         {% endfor %}
     </ul>
 
-    <a href="{% url 'create_crime' %}">Cadastrar Nova Denuncia</a>
+    <a href="{% url 'create_denuncia' %}" style=" position: absolute; color: #f5f6fa; margin-left: 42.5%; margin-top: 15%; ">Cadastrar Nova Denuncia</a>
+    <a href="/newUser" style=" position: absolute; color: #f5f6fa; margin-left: 42.5%; margin-top: 17%; ">Cadastrar Novo Usuário</a>
 </body>
 
 </html>
