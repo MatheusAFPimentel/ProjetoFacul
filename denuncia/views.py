@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Denuncia
 from .forms import DenunciaForm
 
+
 def list_denuncia(request):
     denuncias = Denuncia.objects.all()
     return render(request, 'denuncia.html', {'denuncia': denuncias})
@@ -24,7 +25,7 @@ def update_denuncia(request, id):
         form.save()
         return redirect('list_denuncia')
 
-    return render(request, 'denuncia-form.html', {'form': form, 'denuncia': denuncia})
+    return render(request, 'atualizar.html', {'form': form, 'denuncia': denuncia})
 
 
 def delete_denuncia(request, id):
@@ -35,4 +36,6 @@ def delete_denuncia(request, id):
         return redirect('list_denuncia')
 
     return render(request, 'denuncia-delete-confirm.html', {'denuncia': denuncia})
+
 # Create your views here.
+
