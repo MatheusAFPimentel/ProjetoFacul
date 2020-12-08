@@ -8,25 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Denuncias</title>
 </head>
-<img style="margin-left: 52%; position: relative; margin-top: 8%;"  src="https://img.icons8.com/material/96/000000/user-male-circle--v1.png"/>
-<img src="https://i.imgur.com/WmkUrbj.jpg" title="source: imgur.com" height="770px" style="position: absolute; margin-left: -57.5%; margin-top: 10%;"/>
+<img style="margin-left: 50%; position: relative; margin-top: 10%;"  src="https://img.icons8.com/material/96/000000/user-male-circle--v1.png"/>
+<img src="https://i.imgur.com/WmkUrbj.jpg" title="source: imgur.com" height="770px" style="position: absolute; margin-left: -55.2%; margin-top: 10%;"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <body>
     <img src="../templates/imagem.png" alt=""/>
-    <h1 style="position: absolute; margin-left: 50%;"> Bem-vindo!</h1>
+    <h1 style="position: absolute; margin-left: 48%;"> Bem-vindo!</h1>
     <ul>
-        {% for denuncia in denuncias %}
+        {% for denuncia in denuncia_list %}
+
+        <tr>
+            <td>
+                {{denuncia.Nome_da_rua}}
+            </td>
+        </tr>
         <a href="{% url 'update_denuncia' denuncia.id %}">
             <li> {{ denuncia.denuncias }}</li>
         </a>
         {% endfor %}
     </ul>
     <div style="margin-top: 2%; margin-left: 7%;">
-        <p style="color: black; position: absolute; margin-left: 40%; margin-top: 2%; font: bold; font-size: 20px;"> Cadastrar </p>
-        <a href="{% url 'create_denuncia' %}" style=" color: black; text-decoration: none; position: absolute; margin-left: 40%; margin-top: 3%; font: bold; font-size: 30px; ">Denuncias</a>
-        <p style="color: black; position: absolute; margin-left: 50%; margin-top: 2%; font: bold; font-size: 20px;"> Cadastrar </p>
-        <a href="/newUser" style=" color: black; text-decoration: none; position: absolute;  margin-left: 50%; margin-top: 3%; font: bold; font-size: 30px;">Usuários</a>
+        <p style="color: black; position: absolute; margin-left: 36%; margin-top: 7%; font: bold; font-size: 20px;"> Cadastrar </p>
+        <a href="{% url 'create_denuncia' %}" style=" color: black; text-decoration: none; position: absolute; margin-left: 36%; margin-top: 8%; font: bold; font-size: 30px; ">Denuncias</a>
+        <p style="color: black; position: absolute; margin-left: 50%; margin-top: 7%; font: bold; font-size: 20px;"> Cadastrar </p>
+        <a href="/newUser" style=" color: black; text-decoration: none; position: absolute;  margin-left: 50%; margin-top: 8%; font: bold; font-size: 30px;">Usuários</a>
 
     </div>
 </body>
